@@ -24,7 +24,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
 <!--  scope   provided标签 说明 在打包的时候排除该依赖 ，      -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -61,7 +60,7 @@
             <id>dev</id>
             <properties>
                 <profileActive>dev</profileActive>
-                <project.packaging>jar</project.packaging>
+                <project.packaging>war</project.packaging>
             </properties>
             <activation>
                 <!-- 设置默认激活这个配置 -->
