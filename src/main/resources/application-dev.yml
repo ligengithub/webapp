@@ -1,2 +1,3 @@
 server:
   port: 2345
+debug: true
