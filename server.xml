@@ -50,95 +50,95 @@
          so you may not define subcomponents such as "Valves" at this level.
          Documentation at /docs/config/service.html
      -->
-<!--    <Service name="Catalina">-->
+    <Service name="Catalina">
 
-<!--        &lt;!&ndash;The connectors can use a shared executor, you can define one or more named thread pools&ndash;&gt;-->
-<!--        &lt;!&ndash;-->
-<!--        <Executor name="tomcatThreadPool" namePrefix="catalina-exec-"-->
-<!--            maxThreads="150" minSpareThreads="4"/>-->
-<!--        &ndash;&gt;-->
-
-
-<!--        &lt;!&ndash; A "Connector" represents an endpoint by which requests are received-->
-<!--             and responses are returned. Documentation at :-->
-<!--             Java HTTP Connector: /docs/config/http.html (blocking & non-blocking)-->
-<!--             Java AJP  Connector: /docs/config/ajp.html-->
-<!--             APR (HTTP/AJP) Connector: /docs/apr.html-->
-<!--             Define a non-SSL/TLS HTTP/1.1 Connector on port 8080-->
-<!--        &ndash;&gt;-->
-<!--        <Connector port="9011" protocol="HTTP/1.1"-->
-<!--                   connectionTimeout="20000"-->
-<!--                   redirectPort="8443"/>-->
-<!--        &lt;!&ndash; A "Connector" using the shared thread pool&ndash;&gt;-->
-<!--        &lt;!&ndash;-->
-<!--        <Connector executor="tomcatThreadPool"-->
-<!--                   port="8080" protocol="HTTP/1.1"-->
-<!--                   connectionTimeout="20000"-->
-<!--                   redirectPort="8443" />-->
-<!--        &ndash;&gt;-->
-<!--        &lt;!&ndash; Define a SSL/TLS HTTP/1.1 Connector on port 8443-->
-<!--             This connector uses the NIO implementation that requires the JSSE-->
-<!--             style configuration. When using the APR/native implementation, the-->
-<!--             OpenSSL style configuration is required as described in the APR/native-->
-<!--             documentation &ndash;&gt;-->
-<!--        &lt;!&ndash;-->
-<!--        <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"-->
-<!--                   maxThreads="150" SSLEnabled="true" scheme="https" secure="true"-->
-<!--                   clientAuth="false" sslProtocol="TLS" />-->
-<!--        &ndash;&gt;-->
-
-<!--        &lt;!&ndash; Define an AJP 1.3 Connector on port 8009 &ndash;&gt;-->
-<!--        <Connector port="8009" protocol="AJP/1.3" redirectPort="8443"/>-->
+        <!--The connectors can use a shared executor, you can define one or more named thread pools-->
+        <!--
+        <Executor name="tomcatThreadPool" namePrefix="catalina-exec-"
+            maxThreads="150" minSpareThreads="4"/>
+        -->
 
 
-<!--        &lt;!&ndash; An Engine represents the entry point (within Catalina) that processes-->
-<!--             every request.  The Engine implementation for Tomcat stand alone-->
-<!--             analyzes the HTTP headers included with the request, and passes them-->
-<!--             on to the appropriate Host (virtual host).-->
-<!--             Documentation at /docs/config/engine.html &ndash;&gt;-->
+        <!-- A "Connector" represents an endpoint by which requests are received
+             and responses are returned. Documentation at :
+             Java HTTP Connector: /docs/config/http.html (blocking & non-blocking)
+             Java AJP  Connector: /docs/config/ajp.html
+             APR (HTTP/AJP) Connector: /docs/apr.html
+             Define a non-SSL/TLS HTTP/1.1 Connector on port 8080
+        -->
+        <Connector port="8080" protocol="HTTP/1.1"
+                   connectionTimeout="20000"
+                   redirectPort="8443"/>
+        <!-- A "Connector" using the shared thread pool-->
+        <!--
+        <Connector executor="tomcatThreadPool"
+                   port="8080" protocol="HTTP/1.1"
+                   connectionTimeout="20000"
+                   redirectPort="8443" />
+        -->
+        <!-- Define a SSL/TLS HTTP/1.1 Connector on port 8443
+             This connector uses the NIO implementation that requires the JSSE
+             style configuration. When using the APR/native implementation, the
+             OpenSSL style configuration is required as described in the APR/native
+             documentation -->
+        <!--
+        <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
+                   maxThreads="150" SSLEnabled="true" scheme="https" secure="true"
+                   clientAuth="false" sslProtocol="TLS" />
+        -->
 
-<!--        &lt;!&ndash; You should set jvmRoute to support load-balancing via AJP ie :-->
-<!--        <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">-->
-<!--        &ndash;&gt;-->
-<!--        <Engine name="Catalina" defaultHost="localhost">-->
+        <!-- Define an AJP 1.3 Connector on port 8009 -->
+        <Connector port="8009" protocol="AJP/1.3" redirectPort="8443"/>
 
-<!--            &lt;!&ndash;For clustering, please take a look at documentation at:-->
-<!--                /docs/cluster-howto.html  (simple how to)-->
-<!--                /docs/config/cluster.html (reference documentation) &ndash;&gt;-->
-<!--            &lt;!&ndash;-->
-<!--            <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster"/>-->
-<!--            &ndash;&gt;-->
 
-<!--            &lt;!&ndash; Use the LockOutRealm to prevent attempts to guess user passwords-->
-<!--                 via a brute-force attack &ndash;&gt;-->
-<!--            <Realm className="org.apache.catalina.realm.LockOutRealm">-->
-<!--                &lt;!&ndash; This Realm uses the UserDatabase configured in the global JNDI-->
-<!--                     resources under the key "UserDatabase".  Any edits-->
-<!--                     that are performed against this UserDatabase are immediately-->
-<!--                     available for use by the Realm.  &ndash;&gt;-->
-<!--                <Realm className="org.apache.catalina.realm.UserDatabaseRealm"-->
-<!--                       resourceName="UserDatabase"/>-->
-<!--            </Realm>-->
+        <!-- An Engine represents the entry point (within Catalina) that processes
+             every request.  The Engine implementation for Tomcat stand alone
+             analyzes the HTTP headers included with the request, and passes them
+             on to the appropriate Host (virtual host).
+             Documentation at /docs/config/engine.html -->
 
-<!--            <Host name="localhost" appBase="webapps"-->
-<!--                  unpackWARs="true" autoDeploy="true">-->
+        <!-- You should set jvmRoute to support load-balancing via AJP ie :
+        <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">
+        -->
+        <Engine name="Catalina" defaultHost="localhost">
 
-<!--                &lt;!&ndash; SingleSignOn valve, share authentication between web applications-->
-<!--                     Documentation at: /docs/config/valve.html &ndash;&gt;-->
-<!--                &lt;!&ndash;-->
-<!--                <Valve className="org.apache.catalina.authenticator.SingleSignOn" />-->
-<!--                &ndash;&gt;-->
+            <!--For clustering, please take a look at documentation at:
+                /docs/cluster-howto.html  (simple how to)
+                /docs/config/cluster.html (reference documentation) -->
+            <!--
+            <Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster"/>
+            -->
 
-<!--                &lt;!&ndash; Access log processes all example.-->
-<!--                     Documentation at: /docs/config/valve.html-->
-<!--                     Note: The pattern used is equivalent to using pattern="common" &ndash;&gt;-->
-<!--                <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"-->
-<!--                       prefix="challenger_access_log" suffix=".txt"-->
-<!--                       pattern="%h %l %u %t &quot;%r&quot; %s %b"/>-->
+            <!-- Use the LockOutRealm to prevent attempts to guess user passwords
+                 via a brute-force attack -->
+            <Realm className="org.apache.catalina.realm.LockOutRealm">
+                <!-- This Realm uses the UserDatabase configured in the global JNDI
+                     resources under the key "UserDatabase".  Any edits
+                     that are performed against this UserDatabase are immediately
+                     available for use by the Realm.  -->
+                <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+                       resourceName="UserDatabase"/>
+            </Realm>
 
-<!--            </Host>-->
-<!--        </Engine>-->
-<!--    </Service>-->
+            <Host name="localhost" appBase="webapps"
+                  unpackWARs="true" autoDeploy="true">
+
+                <!-- SingleSignOn valve, share authentication between web applications
+                     Documentation at: /docs/config/valve.html -->
+                <!--
+                <Valve className="org.apache.catalina.authenticator.SingleSignOn" />
+                -->
+
+                <!-- Access log processes all example.
+                     Documentation at: /docs/config/valve.html
+                     Note: The pattern used is equivalent to using pattern="common" -->
+                <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+                       prefix="challenger_access_log" suffix=".txt"
+                       pattern="%h %l %u %t &quot;%r&quot; %s %b"/>
+
+            </Host>
+        </Engine>
+    </Service>
 
     <Service name="hello">
         <Connector port="2345" protocol="HTTP/1.1"
