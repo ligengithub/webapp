@@ -8,7 +8,7 @@
         <version>2.1.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <packaging>war</packaging>
+    <packaging>${project.packaging}</packaging>
     <groupId>com.example</groupId>
     <artifactId>webapp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -52,5 +52,38 @@
             </plugin>
         </plugins>
     </build>
+
+
+<!-- 不同环境的打包   -->
+    <profiles>
+        <profile>
+            <!-- 本地开发环境 -->
+            <id>dev</id>
+            <properties>
+                <profileActive>dev</profileActive>
+                <project.packaging>jar</project.packaging>
+            </properties>
+            <activation>
+                <!-- 设置默认激活这个配置 -->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <!-- 发布环境 -->
+            <id>test</id>
+            <properties>
+                <profileActive>test</profileActive>
+                <project.packaging>war</project.packaging>
+            </properties>
+        </profile>
+        <profile>
+            <!-- 测试环境 -->
+            <id>prod</id>
+            <properties>
+                <profileActive>prod</profileActive>
+                <project.packaging>jar</project.packaging>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>
