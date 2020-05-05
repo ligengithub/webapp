@@ -1,3 +1,20 @@
 server:
   port: 2345
+#debug: true
+
+spring:
+  application:
+    name: sentinel-dashboard-plus
+  datasource:
+    url: ${MYSQL_URL:jdbc:mysql://118.25.153.63:3306/userinfo?useUnicode=true&characterEncoding=utf8&useSSL=false}
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:root}
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*Mapper.xml
+  type-aliases-package: com.example.webapp.po
 debug: true
