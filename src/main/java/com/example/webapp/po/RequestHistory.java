@@ -32,6 +32,11 @@ public class RequestHistory implements Serializable {
 	private Date gmtCreate;
 
 
+	public RequestHistory(String ip, Date gmtCreate) {
+		this.ip = ip;
+		this.gmtCreate = gmtCreate;
+	}
+
 	public Long getId() {
 		return this.id;
 	}
