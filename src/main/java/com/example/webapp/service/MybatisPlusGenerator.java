@@ -22,12 +22,12 @@
 //            IOException {
 //        ConfigGeneratorMy cg = new ConfigGeneratorMy();
 //        // 配置 MySQL 连接
-//        cg.setDbUrl("jdbc:mysql://18.163.206.217:3306/test");
+//        cg.setDbUrl("jdbc:mysql://localhost:3306/db1?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8");
 //        cg.setDbUser("root");
-//        cg.setDbPassword("lg123");
-//        cg.setDbDriverName("com.mysql.jdbc.Driver");
+//        cg.setDbPassword("lg123456");
+//        cg.setDbDriverName("com.mysql.cj.jdbc.Driver");
 //        // 配置包名
-//        String[] table = {"user_info"};
+//        String[] table = {"request_history"};
 //        cg.setTableNames(table);
 //        cg.setBuliderModel(true);
 //        cg.setResultMap(true);
@@ -45,7 +45,7 @@
 //        cg.setIdType(IdType.AUTO);
 //
 //        // 配置保存路径
-//        cg.setSaveDir(System.getProperty("user.dir") + "/webdemo/src/main/java/");
+//        cg.setSaveDir(System.getProperty("user.dir") + "/src/main/java/");
 //        // 其他参数请根据上面的参数说明自行配置，当所有配置完善后，运行AutoGenerator.run()方法生成Code
 //        // 生成代码
 //        AutoGeneratorMy.run(cg);
