@@ -1,5 +1,6 @@
 package com.example.webapp.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.example.webapp.po.RequestHistory;
 import com.example.webapp.response.Response;
 import com.example.webapp.service.RequestHistoryService;
@@ -22,8 +23,8 @@ public class RequestHistoryController {
 
 
     @PostMapping("/record/add")
-    public Response<Boolean> addRecord( HttpServletRequest request) {
-        String remoteAddr = request.getRemoteAddr();
+    public Response<Boolean> addRecord(HttpServletRequest request) {
+        String remoteAddr = request.getHeader("x-real-ip");
         return new Response<>(Response.CODE_SUCCESS, requestHistoryService.insert(new RequestHistory(remoteAddr, new Date())));
     }
 

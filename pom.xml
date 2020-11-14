@@ -115,7 +115,7 @@
             <id>dev</id>
             <properties>
                 <profileActive>dev</profileActive>
-                <project.packaging>war</project.packaging>
+                <project.packaging>jar</project.packaging>
             </properties>
             <activation>
                 <!-- 设置默认激活这个配置 -->
@@ -127,7 +127,7 @@
             <id>test</id>
             <properties>
                 <profileActive>test</profileActive>
-                <project.packaging>war</project.packaging>
+                <project.packaging>jar</project.packaging>
             </properties>
         </profile>
         <profile>

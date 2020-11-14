@@ -1,4 +1,4 @@
-FROM tomcat
+FROM
 WORKDIR /usr/local/tomcat
 WORKDIR /usr/local/tomcat/webapps1/
 COPY server.xml /usr/local/tomcat/conf/
