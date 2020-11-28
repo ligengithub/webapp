@@ -19,13 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class QiniuTokenController {
 
-    @Autowired
-    private QiniuService qiniuService;
-
-
     @GetMapping("/qiniu/getToken")
     public Response getToken() throws AuthException, JSONException {
-        return new Response<>(Response.CODE_SUCCESS, qiniuService.getToken());
+        return new Response<>(Response.CODE_SUCCESS, QiniuService.getToken());
     }
 
 
