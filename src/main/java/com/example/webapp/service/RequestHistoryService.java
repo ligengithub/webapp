@@ -2,7 +2,7 @@ package com.example.webapp.service;
 
 import com.baomidou.framework.service.impl.ServiceImpl;
 import com.example.webapp.dao.IRequestHistoryMapper;
-import com.example.webapp.po.RequestHistory;
+import com.example.webapp.domain.po.RequestHistory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -3,7 +3,7 @@
 <mapper namespace="com.example.webapp.dao.IRequestHistoryMapper">
 
     <!-- 通用查询结果列-->
-    <resultMap id="RequestHistoryResultMap" type="com.example.webapp.po.RequestHistory">
+    <resultMap id="RequestHistoryResultMap" type="com.example.webapp.domain.po.RequestHistory">
         <id column="id" property="id"/>
         <result column="ip" property="ip"/>
         <result column="gmt_create" property="gmtCreate"/>

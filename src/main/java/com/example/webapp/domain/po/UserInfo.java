@@ -1,4 +1,4 @@
-package com.example.webapp.po;
+package com.example.webapp.domain.po;
 
 import java.io.Serializable;
 

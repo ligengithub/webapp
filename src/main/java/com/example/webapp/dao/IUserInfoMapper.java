@@ -1,6 +1,6 @@
 package com.example.webapp.dao;
 
-import com.example.webapp.po.UserInfo;
+import com.example.webapp.domain.po.UserInfo;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 
 /**

@@ -1,7 +1,8 @@
 package com.example.webapp.controller;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.example.webapp.po.UserInfo;
+import com.example.webapp.domain.po.UserInfo;
+import com.example.webapp.response.Response;
 import com.example.webapp.service.UserInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
@@ -17,21 +18,21 @@ public class UserInfoController {
     @Autowired
     private UserInfoService userInfoService;
 
-//    @PostMapping("/login")
-//    public Result<UserInfo> login(@RequestBody UserInfo userInfo) {
-//
-//        UserInfo user = userInfoService.selectOne(new EntityWrapper<>(new UserInfo().setUsername(userInfo.getUsername())));
-//
-//        if (user == null) {
-//            userInfoService.addUser(userInfo);
-//            return new Result("8001", "注册成功",userInfo);
-//        } else {
-//            if (StringUtils.pathEquals(user.getPassword(), userInfo.getPassword())) {
-//                return new Result("8001", "登录成功",user);
-//            } else {
-//                return new Result<>("4001", "登录失败，密码错误");
-//            }
-//        }
-//    }
+    @PostMapping("/login")
+    public Response login(@RequestBody UserInfo userInfo) {
+
+        UserInfo user = userInfoService.selectOne(new EntityWrapper<>(new UserInfo().setUsername(userInfo.getUsername())));
+
+        if (user == null) {
+            userInfoService.addUser(userInfo);
+            return new Response<>(Response.CODE_SUCCESS, userInfo);
+        } else {
+            if (StringUtils.pathEquals(user.getPassword(), userInfo.getPassword())) {
+                return new Response<>(Response.CODE_SUCCESS, user);
+            } else {
+                return new Response<>(Response.CODE_FAIL, "登录失败，密码错误");
+            }
+        }
+    }
 
 }

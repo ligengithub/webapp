@@ -3,7 +3,7 @@
 <mapper namespace="com.example.webapp.dao.IUserInfoMapper">
 
     <!-- 通用查询结果列-->
-    <resultMap id="UserInfoResultMap" type="com.example.webapp.po.UserInfo">
+    <resultMap id="UserInfoResultMap" type="com.example.webapp.domain.po.UserInfo">
         <id column="id" property="id"/>
         <result column="password" property="password"/>
         <result column="remark" property="remark"/>

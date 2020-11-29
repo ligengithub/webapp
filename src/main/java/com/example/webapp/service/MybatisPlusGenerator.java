@@ -1,45 +1,35 @@
+//package com.example.webapp.service;///**
 //
-//package com.example.webapp.service;
-//
-//import java.io.IOException;
-//
+//import com.baomidou.mybatisplus.annotations.IdType;
 //import com.baomidou.mybatisplus.generator.AutoGeneratorMy;
 //import com.baomidou.mybatisplus.generator.ConfigGeneratorMy;
 //
-//import com.baomidou.mybatisplus.annotations.IdType;
+//import java.io.IOException;
 //
-//import javax.naming.ConfigurationException;
-//
-///***
-// @ClassName :CustomGenerator
-// *@Description :
-// *@Author :xujialin
-// *@CreationDate :2016年11月4日下午2:29:50
-// */
-//
+//// */
 //public class MybatisPlusGenerator {
-//    public static void main(String[] args) throws ConfigurationException,
-//            IOException {
+//    public static void main(String[] args) throws IOException {
+//
 //        ConfigGeneratorMy cg = new ConfigGeneratorMy();
 //        // 配置 MySQL 连接
-//        cg.setDbUrl("jdbc:mysql://localhost:3306/db1?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8");
-//        cg.setDbUser("root");
-//        cg.setDbPassword("lg123456");
 //        cg.setDbDriverName("com.mysql.cj.jdbc.Driver");
+//        cg.setDbUser("root");
+//        cg.setDbPassword("lg123xx..");
+//        cg.setDbUrl("jdbc:mysql://150.158.155.24/db1?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true");
 //        // 配置包名
-//        String[] table = {"request_history"};
+//        String[] table = {"user_img"};
 //        cg.setTableNames(table);
 //        cg.setBuliderModel(true);
 //        cg.setResultMap(true);
 //        cg.setFileOverride(true);
-//        cg.setEntityPackage("com.example.webapp.po");
+//        cg.setEntityPackage("com.example.webapp.domain.po");
 //        cg.setMapperName("I%sMapper");
 //        cg.setMapperPackage("com.example.webapp.dao");
 //        cg.setServiceImplName("%sService");
-//        cg.setServicePackage("com.example.webapp.service.iService");
-//        cg.setXmlPackage("com.example.webapp.dao");
+//        cg.setServicePackage(null);
+//        cg.setXmlPackage("com.example.webapp.mapper");
 //        cg.setServiceImplPackage("com.example.webapp.service");
-//        cg.setControllerPackage("com.example.webapp.controller");
+//        cg.setControllerPackage("com.example.webapp.web");
 //
 //        // 配置表主键策略
 //        cg.setIdType(IdType.AUTO);
@@ -51,4 +41,3 @@
 //        AutoGeneratorMy.run(cg);
 //    }
 //}
-//

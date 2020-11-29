@@ -1,6 +1,6 @@
 package com.example.webapp.controller;
 
-import com.example.webapp.po.RequestHistory;
+import com.example.webapp.domain.po.RequestHistory;
 import com.example.webapp.response.Response;
 import com.example.webapp.service.RequestHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
