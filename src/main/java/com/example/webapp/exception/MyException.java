@@ -74,6 +74,7 @@ public class MyException extends Exception {
         msgMap.put(CODE_DATA_REPEAT_ERROR, MSG_DATA_REPEAT_ERROR);
         msgMap.put(CODE_DATA_TOO_LONG_ERROR, MSG_DATA_TOO_LONG_ERROR);
         msgMap.put(CODE_UNKNOWN_ERROR, MSG_UNKNOWN_ERROR);
+        msgMap.put(CODE_AUTH_ERROR, MSG_AUTH_ERROR);
     }
 
 }
