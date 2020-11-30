@@ -1,10 +1,9 @@
 package com.example.webapp.service;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.example.webapp.domain.dto.ImgInfo;
 import com.example.webapp.domain.po.UserImg;
-import com.example.webapp.exception.MyException;
 import com.example.webapp.domain.po.UserInfo;
+import com.example.webapp.exception.MyException;
 import com.example.webapp.vo.UploadVo;
 import com.qiniu.api.auth.AuthException;
 import com.qiniu.api.auth.digest.Mac;
@@ -13,7 +12,6 @@ import com.qiniu.api.rs.PutPolicy;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sun.nio.cs.US_ASCII;
 
 import java.util.List;
 
@@ -34,8 +32,8 @@ public class QiniuService {
     private UserImgService userImgService;
 
 
-    public static String getToken() throws AuthException, JSONException {
-
+    public String getToken(UploadVo vo) throws AuthException, JSONException, MyException {
+        checkUser(vo);
         Config.ACCESS_KEY = "WNpck9WBdrlus0mXhUYSeEVUxGewRJLWWDHcp4o1";
         Config.SECRET_KEY = "hVByGzSINwRNtHaegyezRa-K-QR_PtU1-aOKiM7V";
         Mac mac = new Mac(Config.ACCESS_KEY, Config.SECRET_KEY);

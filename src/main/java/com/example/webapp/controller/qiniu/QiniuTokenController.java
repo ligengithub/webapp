@@ -7,6 +7,7 @@ import com.example.webapp.vo.UploadVo;
 import com.qiniu.api.auth.AuthException;
 import org.json.JSONException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /**
