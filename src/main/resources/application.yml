@@ -6,9 +6,9 @@ spring:
   application:
     name: sentinel-dashboard-plus
   datasource:
-    url: ${MYSQL_URL:jdbc:mysql://150.158.155.24/db1?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true}
-    username: ${MYSQL_USERNAME:root}
-    password: ${MYSQL_PASSWORD:lg123xx..}
+    url: ${MYSQL_URL:jdbc:mysql://xx.xx.xx.xx/db1?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowPublicKeyRetrieval=true}
+    username: ${MYSQL_USERNAME:xxxxxx}
+    password: ${MYSQL_PASSWORD:xxxxxx}
     driver-class-name: com.mysql.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
 
